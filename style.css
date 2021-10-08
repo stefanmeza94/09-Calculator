@@ -1,0 +1,287 @@
+:root {
+  /************ THEME 1 *************/
+  /* Backgrounds */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --key-background: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --key-background-toggle-red: hsl(6, 63%, 50%);
+  --key-shadow-red: hsl(6, 70%, 34%);
+  --key-background-orange: hsl(30, 25%, 89%);
+  --key-shadow-orange: hsl(28, 16%, 65%);
+
+  /************ THEME 2 *************/
+  /* Backgrounds */
+  --main-background-second: hsl(0, 0%, 90%);
+  --toggle-background-second: hsl(0, 5%, 81%);
+  --screen-background-second: hsl(0, 0%, 93%);
+
+    --color: #E5E4E1;
+  /* Keys */
+  --key-background-second: hsl(185, 42%, 37%);
+  --key-shadow-second: hsl(185, 58%, 25%);
+  --key-background-toggle-orange-second: hsl(25, 98%, 40%);
+  --key-shadow-orange-second: hsl(25, 99%, 27%);
+  --key-background-yellow-second: hsl(45, 7%, 89%);
+  --key-shadow-orange-second: hsl(35, 11%, 61%);
+
+   /************ THEME 3 *************/
+  /* Backgrounds */
+  --main-background-third: hsl(268, 75%, 9%);
+  --toggle-background-keypad-screen-background-third: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --key-background-third: hsl(281, 89%, 26%);
+  --key-shadow-third: hsl(285, 91%, 52%);
+  --key-background-toggle-cyan-third: hsl(176, 100%, 44%);
+  --key-shadow-cyan-third: hsl(177, 92%, 70%);
+  --key-background-violet-third: hsl(268, 47%, 21%);
+  --key-shadow-magenta-third: hsl(290, 70%, 36%);
+
+
+  /************ TEXT **************/
+  --light-yellow: hsl(52, 100%, 62%);
+  --very-dark-blue: hsl(198, 20%, 13%);
+  --white: #fff;
+
+  /********** FONT FAMILY ***********/
+  --ff-primary: 'Spartan', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--main-background);
+  padding: 0 24px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--main-background);
+  /* padding: 0 24px; */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.header h2 {
+  font-size: 32px;
+  color: var(--white);
+  margin: 0;
+}
+
+.header .header-theme {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.header .header-theme .header-theme_numbers {
+  color: var(--white);
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.header-theme_numbers span {
+  margin-left: 10px;
+}
+
+.header .header-theme-choose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .header-theme-choose p {
+  margin: 0;
+  margin-right: 21px;
+  color: var(--white);
+  font-size: 12px;
+  line-height: 13.44px;
+}
+
+.header .header-theme-choose .color-chooser-wrapper {
+  background-color: var(--toggle-background);
+  padding: 5px;
+  border-radius: 13px;
+  width: 71px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.color-chooser-wrapper .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.color-chooser-wrapper .circle.active {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--key-background-toggle-red);
+}
+
+.color-chooser-wrapper .circle.active:hover {
+  cursor: pointer;
+  background-color: #F96B5B;
+}
+
+.results {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.results .output {
+  width: 100%;
+  height: 88px;
+  background-color: var(--screen-background);
+  border-radius: 10px;
+  font-size: 32px;
+  line-height: 35.84px;
+  color: var(--white);
+  padding: 26px 24px;
+  text-align: right;
+}
+
+.operators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 13px;
+  padding: 24px;
+  background-color: var(--toggle-background);
+  border-radius: 10px;
+}
+
+.operators .operator {
+  font-size: 28px;
+  line-height: 31.36px;
+  background-color: var(--key-background-orange);
+  color: var(--very-dark-blue);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #B3A497;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.operators .operator:hover {
+  cursor: pointer;
+  background-color: var(--white);
+}
+
+.operators .delete {
+  background-color: var(--key-background);
+  color: var(--white);
+  box-shadow: inset 0px -4px 0px var(--key-shadow);
+  font-size: 16px;
+  line-height: 17.92px;
+}
+
+.operators .reset {
+  background-color: var(--key-background);
+  color: var(--white);
+  box-shadow: inset 0px -4px 0px var(--key-shadow);
+  font-size: 16px;
+  line-height: 17.92px;
+}
+
+.operators .delete:hover,
+.operators .reset:hover {
+  background-color: #A2B2E1;
+}
+
+.operators .equal {
+  background-color: var(--key-background-toggle-red);
+  color: var(--white);
+  box-shadow: inset 0px -4px 0px var(--key-shadow-red);
+  font-size: 16px;
+  line-height: 17.92px;
+}
+
+.operators .equal:hover {
+  background-color: #F96B5B;
+}
+
+.operators .reset {
+  grid-area: 5 / 1 / 6 / 3;
+}
+
+.operators .equal {
+  grid-area: 5 / 3 / 6 / 5;
+}
+
+/************ LIGHT THEME **************/
+.container.light {
+  background-color: var(--main-background-second);
+}
+
+.container.light .calculator {
+  background-color: var(--main-background-second);
+}
+
+.container.light .header h2,
+.container.light .header .header-theme .header-theme_numbers, 
+.container.light .header .header-theme-choose p {
+  color: var(--very-dark-blue);  
+}
+
+.container.light .header .header-theme-choose .color-chooser-wrapper {
+  background-color: var(--toggle-background-second);
+}
+
+.container.light .color-chooser-wrapper .circle.active {
+  background-color: var(--key-background-toggle-orange-second);
+}
+
+.container.light .results .output {
+  background-color: var(--screen-background-second);
+  color: var(--very-dark-blue);
+}
+
+.container.light .operators {
+  background-color: var(--toggle-background-second);
+}
+
+.container.light .operators .operator {
+  color: var(--very-dark-blue);
+  background-color: var(--key-background-yellow-second);
+}
+
+.container.light .operators .delete,
+.container.light .operators .reset {
+  color: var(--white);
+  background-color: var(--key-background-second);
+  box-shadow: inset 0px -4px 0px var(--key-shadow-second)
+}
+
+.container.light .operators .equal {
+  color: var(--white);
+  background-color: var(--key-background-toggle-orange-second);
+  box-shadow: inset 0px -4px 0px var(--key-shadow-orange-second);
+}

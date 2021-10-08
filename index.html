@@ -4,13 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href="./favicon-32x32.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Calculator App</title>
   </head>
   <body>
     
-    
+    <main class="container">
+      <section class="calculator">
+
+        <header class="header">
+          <h2>calc</h2>
+          <div class="header-theme">
+            <div class="header-theme_numbers">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="header-theme-choose">
+              <p>THEME</p>
+              <div class="color-chooser-wrapper">
+                <div class="circle js-circle1 active"></div>
+                <div class="circle js-circle2"></div>
+                <div class="circle js-circle3"></div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="results">
+          <div class="output js-output">399,981</div>
+        </section>
+
+        <section class="operators">
+          <div class="operator js-operator" id="7">7</div>
+          <div class="operator js-operator" id="8">8</div>
+          <div class="operator js-operator" id="9">9</div>
+          <div class="operator delete js-delete" id="del">DEL</div>
+          <div class="operator js-operator" id="4">4</div>
+          <div class="operator js-operator" id="5">5</div>
+          <div class="operator js-operator" id="6">6</div>
+          <div class="operator js-plus" id="plus">+</div>
+          <div class="operator js-operator" id="1">1</div>
+          <div class="operator js-operator" id="2">2</div>
+          <div class="operator js-operator" id="3">3</div>
+          <div class="operator js-minus" id="minus">-</div>
+          <div class="operator js-operator" id="minus">.</div>
+          <div class="operator js-operator" id="0">0</div>
+          <div class="operator js-division" id="division">/</div>
+          <div class="operator js-multiplication" id="multiplication">x</div>
+          <div class="operator reset js-reset" id="reset">RESET</div>
+          <div class="operator equal js-equal" id="equal">=</div>
+        </section>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>
