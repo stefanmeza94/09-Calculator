@@ -13,21 +13,22 @@
   --key-background-orange: hsl(30, 25%, 89%);
   --key-shadow-orange: hsl(28, 16%, 65%);
 
+	
   /************ THEME 2 *************/
   /* Backgrounds */
   --main-background-second: hsl(0, 0%, 90%);
   --toggle-background-second: hsl(0, 5%, 81%);
   --screen-background-second: hsl(0, 0%, 93%);
 
-    --color: #E5E4E1;
   /* Keys */
   --key-background-second: hsl(185, 42%, 37%);
   --key-shadow-second: hsl(185, 58%, 25%);
   --key-background-toggle-orange-second: hsl(25, 98%, 40%);
   --key-shadow-orange-second: hsl(25, 99%, 27%);
   --key-background-yellow-second: hsl(45, 7%, 89%);
-  --key-shadow-orange-second: hsl(35, 11%, 61%);
+  --key-shadow-greish-second: hsl(35, 11%, 61%);
 
+ 	
    /************ THEME 3 *************/
   /* Backgrounds */
   --main-background-third: hsl(268, 75%, 9%);
@@ -40,7 +41,6 @@
   --key-shadow-cyan-third: hsl(177, 92%, 70%);
   --key-background-violet-third: hsl(268, 47%, 21%);
   --key-shadow-magenta-third: hsl(290, 70%, 36%);
-
 
   /************ TEXT **************/
   --light-yellow: hsl(52, 100%, 62%);
@@ -67,11 +67,12 @@ body {
   place-items: center;
   background-color: var(--main-background);
   padding: 0 24px;
+	transition: all .1s;
 }
 
 .calculator {
   width: 100%;
-  max-width: 400px;
+  max-width: 380px;
   background-color: var(--main-background);
   /* padding: 0 24px; */
 }
@@ -109,6 +110,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header .header-theme-choose:hover {
+	cursor: pointer;
 }
 
 .header .header-theme-choose p {
@@ -236,7 +241,13 @@ body {
   grid-area: 5 / 3 / 6 / 5;
 }
 
-/************ LIGHT THEME **************/
+@media (min-width: 768px) {
+	.calculator {
+		max-width: 540px;
+	}
+}
+
+/********************** LIGHT (THEME 2) ***********************/
 .container.light {
   background-color: var(--main-background-second);
 }
@@ -259,6 +270,10 @@ body {
   background-color: var(--key-background-toggle-orange-second);
 }
 
+.container.light .color-chooser-wrapper .circle.active:hover {
+  background-color: #FF8A38;
+}
+
 .container.light .results .output {
   background-color: var(--screen-background-second);
   color: var(--very-dark-blue);
@@ -273,6 +288,10 @@ body {
   background-color: var(--key-background-yellow-second);
 }
 
+.container.light .operators .operator:hover {
+  background-color: var(--white);
+}
+
 .container.light .operators .delete,
 .container.light .operators .reset {
   color: var(--white);
@@ -280,8 +299,87 @@ body {
   box-shadow: inset 0px -4px 0px var(--key-shadow-second)
 }
 
+.container.light .operators .delete:hover,
+.container.light .operators .reset:hover {
+	background-color: #62B5BC;
+}
+
+
 .container.light .operators .equal {
   color: var(--white);
   background-color: var(--key-background-toggle-orange-second);
-  box-shadow: inset 0px -4px 0px var(--key-shadow-orange-second);
+  box-shadow: inset 0px -4px 0px var();
+}
+
+.container.light .operators .equal:hover {
+  background-color: #FF8A38;  
+}
+
+/********************** HIGH CONTRAST (THEME 3)  ***********************/
+.container.highContrast {
+  background-color: var(--main-background-third);
+}
+
+.container.highContrast .calculator {
+  background-color: var(--main-background-third);
+}
+
+.container.highContrast .header h2,
+.container.highContrast .header .header-theme .header-theme_numbers, 
+.container.highContrast .header .header-theme-choose p {
+  color: var(--light-yellow);  
+}
+
+.container.highContrast .header .header-theme-choose .color-chooser-wrapper {
+  background-color: var(--toggle-background-keypad-screen-background-third);
+}
+
+.container.highContrast .color-chooser-wrapper .circle.active {
+  background-color: var(--key-background-toggle-cyan-third);
+}
+
+.container.highContrast .color-chooser-wrapper .circle.active:hover {
+  background-color: #93FFF8;
+}
+
+.container.highContrast .results .output {
+  background-color: var(--toggle-background-keypad-screen-background-third);
+  color: var(--light-yellow);
+}
+
+.container.highContrast .operators {
+  background-color: var(--toggle-background-keypad-screen-background-third);
+}
+
+.container.highContrast .operators .operator {
+  color: var(--light-yellow);
+  background-color: var(--key-background-violet-third);
+	box-shadow: inset 0px -4px 0px var(--key-shadow-magenta-third);
+}
+
+.container.highContrast .operators .operator:hover {
+  background-color: #6C34AC;
+}
+
+.container.highContrast .operators .delete,
+.container.highContrast .operators .reset {
+  color: var(--white);
+  background-color: var(--key-background-third);
+  box-shadow: inset 0px -4px 0px var(--key-shadow-third)
+}
+
+.container.highContrast .operators .delete:hover,
+.container.highContrast .operators .reset:hover {
+	background-color: #8631AF;
+}
+
+
+.container.highContrast .operators .equal {
+  color: var(--white);
+  background-color: var(--key-background-toggle-cyan-third);
+  box-shadow: inset 0px -4px 0px var(--key-shadow-cyan-third);
+}
+
+.container.highContrast .operators .equal:hover {
+  background-color: #93FFF8;  
 }
