@@ -4,7 +4,6 @@ const circle1 = document.querySelector('.js-circle1');
 const circle2 = document.querySelector('.js-circle2');
 const circle3 = document.querySelector('.js-circle3');
 
-
 // toggle theme 1
 circle1.addEventListener('click', function() {
   if (circle1.classList.contains('active')) {
@@ -95,7 +94,7 @@ keys.addEventListener('click', e => {
     output.textContent = calculate(firstNumber, operator, secondNumber);    
     
   }
-
+s
 
   if (type === 'delete') {
     if (output.textContent === '0') {
