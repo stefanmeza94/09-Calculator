@@ -170,6 +170,7 @@ body {
   color: var(--white);
   padding: 26px 24px;
   text-align: right;
+  overflow: hidden;
 }
 
 .operators {
@@ -239,6 +240,10 @@ body {
 
 .operators .equal {
   grid-area: 5 / 3 / 6 / 5;
+}
+
+[data-state="selected"] {
+  opacity: .4;
 }
 
 @media (min-width: 768px) {
