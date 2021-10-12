@@ -97,7 +97,7 @@ equal.addEventListener('click', function(e) {
   doCalculation();
   result += '';
   console.log(result);
-  displayResult.innerText = `${result.includes('.') ? (+result).toFixed(12) : +result}`;
+  displayResult.innerText = `${result.includes('.') ? (+result).toFixed(2) : +result}`;
   result1 = '';
   result2 = '';
 });
