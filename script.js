@@ -38,7 +38,6 @@ circle3.addEventListener('click', function() {
 const calculator = document.querySelector('.calculator');
 const output = document.querySelector('.js-output');
 const keys = document.querySelector('.operators');
-const ime = 'meza'.length;
 
 function calculate(firstNumber, operator, secondNumber) {
   firstNumber = parseInt(firstNumber);
@@ -63,8 +62,6 @@ keys.addEventListener('click', e => {
   const {type} = key.dataset;
   const {previousKeyType} = calculator.dataset;
 
-  if (key.dataset.state) key.dataset.state = '';
-
   // Checking if this is a number key
   if (type === 'number') {
     if (displayValue === '0') {
@@ -78,7 +75,7 @@ keys.addEventListener('click', e => {
 
   // Checking if this is a operator key
   if (type === 'operator') {
-    // display value in this state contains firstNumber and we store it to data-firstNumber attribute
+    // displayValue in this state contains firstNumber and we store it to data-firstNumber attribute
     calculator.dataset.firstNumber = displayValue;
     calculator.dataset.operator = key.dataset.key;
   }
@@ -94,13 +91,11 @@ keys.addEventListener('click', e => {
     output.textContent = calculate(firstNumber, operator, secondNumber);    
     
   }
-s
 
   if (type === 'delete') {
     if (output.textContent === '0') {
       return;
     } else {
-      console.log('radi kad ima neki broj a ne kad je nula')
       output.textContent = [...output.textContent].slice(0, -1).join('');
     }
   }
@@ -115,4 +110,3 @@ s
   calculator.dataset.previousKeyType = type;
 });
 
-const niz = ['1', '2', '3'];
