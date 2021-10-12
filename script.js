@@ -50,7 +50,7 @@ let result = null;
 
 numbers.forEach(number => {
   number.addEventListener('click', function(e) {
-    // cannot start with a dot if there is nothing type yet
+    // cannot start with a dot if there is nothing typeds yet
     if (e.target.innerText === '.' && displayResult.textContent === '') {
       return;
     }
